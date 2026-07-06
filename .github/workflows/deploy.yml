@@ -24,6 +24,8 @@ jobs:
 
       - name: Install, plan and build Astro
         uses: withastro/action@v3
+        with:
+          node-version: 22
         # The action automatically detects pnpm-lock.yaml and uses pnpm
 
   deploy:
