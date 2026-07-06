@@ -31,27 +31,29 @@ export function BookingHeader({
   }
 
   return (
-    <header className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+    <header className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between mb-8 lg:mb-0">
       <div className="space-y-3">
         <StatusLabel>Booking . {status}</StatusLabel>
-        <h1 className="font-serif text-4xl leading-tight --text-foreground sm:text-5xl text-balance">
+        <h1 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl text-balance">
           Bienvenue,{" "}
-          <span className="italic --text-primary">{guest.firstName}.</span>
+          <span className="italic text-primary">{guest.firstName}.</span>
         </h1>
       </div>
 
       <div className="flex shrink-0 gap-3">
         <Button
           variant="outline"
-          icon={<Printer className="size-4" />}
+          icon={<Printer className="size-4 hidden md:flex" />}
           onClick={handlePrint}
+          className="cursor-pointer"
         >
           Print receipt
         </Button>
         <Button
           variant="primary"
-          icon={<CalendarPlus className="size-4" />}
+          icon={<CalendarPlus className="size-4 hidden md:flex" />}
           onClick={handleCalendar}
+          className="cursor-pointer"
         >
           Add to calendar
         </Button>

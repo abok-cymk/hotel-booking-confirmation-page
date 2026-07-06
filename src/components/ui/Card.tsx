@@ -15,7 +15,7 @@ export function Card({
   return (
     <Tag
       className={cx(
-        "rounded-2xl border --border-border --bg-surface p-6 shadow-(--shadow-card)",
+        "rounded-2xl border border-border bg-surface p-6 shadow-(--shadow-card)",
         className,
       )}
       {...props}

@@ -21,7 +21,7 @@ export function BookingCardStack({ booking }: BookingCardStackProps) {
 
       {/* Desktop: overlapping, fanning cards */}
       <div
-        className="relative mx-auto hidden h-[240px] max-w-3xl items-center justify-center lg:flex"
+        className="relative mx-auto hidden items-center justify-center lg:flex mt-12"
         onMouseEnter={() => setFanned(true)}
         onMouseLeave={() => setFanned(false)}
         onFocusCapture={() => setFanned(true)}
@@ -29,10 +29,10 @@ export function BookingCardStack({ booking }: BookingCardStackProps) {
       >
         <div
           className={cx(
-            "absolute w-[380px] transition-all duration-500 ease-out",
+            "absolute w-95 transition-all duration-500 ease-out",
             fanned
-              ? "-translate-x-[46%] -rotate-3"
-              : "-translate-x-[18%] -rotate-1",
+              ? "translate-x-[-46%] -rotate-8"
+              : "translate-x-[-48%] -rotate-6",
           )}
         >
           <ReceiptCard booking={booking} />
@@ -40,29 +40,28 @@ export function BookingCardStack({ booking }: BookingCardStackProps) {
 
         <div
           className={cx(
-            "absolute w-[380px] transition-all duration-500 ease-out",
+            "w-95 transition-all duration-500 ease-out",
             fanned
-              ? "translate-x-[46%] rotate-3"
-              : "translate-x-[18%] rotate-1",
+              ? "translate-x-[46%] rotate-8"
+              : "translate-x-[52%] rotate-6",
           )}
         >
           <WelcomeCard
             host={booking.host}
             room={booking.room}
-            className="h-[380px]"
           />
         </div>
       </div>
 
-      <p className="hidden items-center justify-center gap-3 text-center font-mono text-[0.65rem] uppercase tracking-[0.25em] --text-muted-foreground lg:flex">
+      <p className="hidden items-center justify-center gap-3 text-center font-mono text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground lg:flex">
         <span
           aria-hidden="true"
-          className="inline-block h-1 w-1 rorate-45 --bg-primary/60"
+          className="inline-block h-1 w-1 rotate-45 bg-primary/60"
         />
         Hover to fan
         <span
           aria-hidden="true"
-          className="inline-block h-1 w-1 rorate-45 --bg-primary/60"
+          className="inline-block h-1 w-1 rotate-45 bg-primary/60"
         />
       </p>
     </div>

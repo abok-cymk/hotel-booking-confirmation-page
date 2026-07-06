@@ -10,7 +10,7 @@ export function StatusLabel({ children, className }: StatusLabelProps) {
   return (
     <p
       className={cx(
-        "font-mono text-xs uppercase tracking-[0.2em] --text-muted-foreground",
+        "font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground",
         className,
       )}
     >

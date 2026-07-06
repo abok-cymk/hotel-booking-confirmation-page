@@ -19,14 +19,14 @@ export function Barcode({ value = "MS-2026", className }: BarcodeProps) {
 
   return (
     <div
-      className={cx("flex h-9 items-end gap-[2px]", className)}
+      className={cx("flex h-9 items-end gap-0.5", className)}
       role="img"
       aria-label={`Barcode for reference ${value}`}
     >
       {bars.map((w, i) => (
         <span
           key={i}
-          className="block h-full rounded-[1px] --bg-foreground"
+          className="block h-full rounded-[1px] bg-foreground"
           style={{ width: `${w}px`, opacity: w === 2 ? 0.85 : 1 }}
         />
       ))}

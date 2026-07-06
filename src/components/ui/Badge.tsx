@@ -12,7 +12,7 @@ export function Badge({ children, label, className }: BadgeProps) {
   return (
     <span
       className={cx(
-        "inline-flex h-5 min-w-5 items-center justify-center rounded-full --bg-primary px-1.5 text-xs font-semibold --text-primary-foreground",
+        "inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 text-xs font-semibold text-primary-foreground",
         className,
       )}
     >

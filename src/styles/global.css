@@ -1,7 +1,96 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "";
+    src: url();
+}
+
 @theme {
-    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-    --font-serif: "Fraunces", ui-serif, Georgia, serif;
-    --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Surfaces */
+  --color-background: oklch(0.968 0.012 78);
+  --color-surface: oklch(0.995 0.006 92);
+  --color-surface-muted: oklch(0.945 0.016 80);
+  --color-border: oklch(0.9 0.02 70);
+  --color-border-strong: oklch(0.82 0.03 65);
+
+  /* Ink */
+  --color-foreground: oklch(0.27 0.03 47);
+  --color-muted-foreground: oklch(0.52 0.03 55);
+  --color-faint-foreground: oklch(0.66 0.025 60);
+
+  /* Terracotta — the house signature */
+  --color-primary: oklch(0.56 0.16 45);
+  --color-primary-foreground: oklch(0.98 0.01 90);
+  --color-primary-deep: oklch(0.46 0.15 40);
+  --color-primary-bright: oklch(0.66 0.17 55);
+
+  /* Lemonade */
+  --color-sun: oklch(0.86 0.15 90);
+  --color-sun-deep: oklch(0.78 0.16 78);
+  --color-sun-foreground: oklch(0.35 0.06 70);
+
+  /* Functional accents (info cards) */
+  --color-accent-wifi: oklch(0.5 0.17 268);
+  --color-accent-breakfast: oklch(0.52 0.17 5);
+
+  /* Radius scale */
+  --radius: 1rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px oklch(0.4 0.05 50 / 0.04), 0 8px 24px oklch(0.4 0.05 50 / 0.06);
+  --shadow-float: 0 18px 50px oklch(0.4 0.08 45 / 0.18);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv11";
+  }
+
+  /* Consistent, accessible focus ring across interactive elements. */
+  :where(a, button, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+@layer utilities {
+  .font-numeric {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Perforated edge used on the receipt / ticket. */
+  .edge-perforated {
+    -webkit-mask-image: radial-gradient(circle at 6px 50%, transparent 5px, black 5.5px);
+    mask-image: radial-gradient(circle at 6px 50%, transparent 5px, black 5.5px);
+    -webkit-mask-size: 12px 100%;
+    mask-size: 12px 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
 }

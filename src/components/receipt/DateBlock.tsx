@@ -14,13 +14,13 @@ export function DateBlock({ label, iso, time, align = "start", className }: Date
 
     return (
         <div className={cx("space-y-1", align === "end" && "text-right", className)}>
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em --text-muted-foreground]">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">
                 {label}
             </p>
-            <p className="font-serif text-3xl leading-none --text-foreground">
+            <p className="font-serif text-3xl leading-none text-foreground">
                 {day} {month}
             </p>
-            <p className="text-xs --text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
                 {weekday} . {time}
             </p>
         </div>

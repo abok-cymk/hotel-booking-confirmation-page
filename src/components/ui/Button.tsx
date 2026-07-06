@@ -14,10 +14,10 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 disabled:pointer-event-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 --focus-visible:outline-primary";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "--bg-foreground --text-background --hover:bg-foreground/90",
+  primary: "bg-foreground text-background hover:bg-foreground/90",
   outline:
-    "border --border-border-strong --bg-surface --text-foreground --hover:bg-surface-muted",
-  ghost: "--text-foreground --hover:bg-surface-muted",
+    "border border-border-strong bg-surface text-foreground hover:bg-surface-muted",
+  ghost: "text-foreground hover:bg-surface-muted",
 };
 
 const sizes: Record<ButttonSize, string> = {

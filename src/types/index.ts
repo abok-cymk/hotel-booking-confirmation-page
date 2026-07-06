@@ -1,5 +1,3 @@
-import type { LucideIcon } from "lucide-react";
-
 export type BookingStatus = "confirmed" | "pending" | "cancelled";
 
 export interface ReceiptLine {
@@ -49,11 +47,18 @@ export interface Booking {
 }
 
 /** Navigation entry for sidebar / mobile menu. */
+export type NavIconName =
+  | "bed-double"
+  | "home"
+  | "map-pin"
+  | "croissant"
+  | "mail";
+
 export interface NavItem {
   id: string;
   label: string;
   href: string;
-  icon: LucideIcon;
+  icon: NavIconName;
   badge?: number;
 }
 
@@ -75,12 +80,13 @@ export interface Weather {
 
 /** The three numbered info cards (Arrival, WiFi, Breakfast). */
 export type InfoCardTone = "primary" | "wifi" | "breakfast";
+export type InfoCardIconName = "key-round" | "wifi" | "utensils-crossed";
 
 export interface InfoCard {
   id: string;
   index: string;
   tone: InfoCardTone;
-  icon: LucideIcon;
+  icon: InfoCardIconName;
   eyebrow: string;
   title: string;
   subtitle?: string;

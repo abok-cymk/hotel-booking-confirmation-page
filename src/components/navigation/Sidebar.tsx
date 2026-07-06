@@ -24,7 +24,7 @@ export function Sidebar({
   activeId = "stay",
 }: SidebarProps) {
   return (
-    <aside className="hidden w-72 shrink-0 flex-col justify-between border-r --border-border --bg-background px-6 py-8 lg:flex">
+    <aside className="hidden w-72 shrink-0 flex-col justify-between border-r border-border bg-background px-6 py-8 lg:flex">
       <div className="space-y-8">
         <Logo primary="Maison" secondary="Soleil" />
         <nav aria-label="Primary">
