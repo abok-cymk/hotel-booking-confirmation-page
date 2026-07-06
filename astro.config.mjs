@@ -8,11 +8,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   integrations: [react()],
   vite: {
-      plugins: [tailwindcss()],
+    plugins: [tailwindcss()],
   },
 
   server: {
-      host: true,
+    host: true,
   },
 
+  site: "https://abok-cymk.github.io",
+  base: "/hotel-booking-confirmation-page",
 });
