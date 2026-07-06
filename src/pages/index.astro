@@ -1,0 +1,28 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import DashboardLayout from "@/components/layout/DashboardLayout.astro";
+import { BookingHeader } from "@/components/booking/BookingHeader";
+import { BookingCardStack } from "@/components/booking/BookingCardStack";
+import { InfoCardGrid } from "@/components/cards/InfoCardGrid";
+import { booking } from "@/components/data/booking";
+import { infoCards } from "@/components/data/info-cards";
+---
+
+<BaseLayout title="Bienvenue, Lucia - Maison Soleil">
+  <DashboardLayout activeId="stay">
+    <div class="space-y-10">
+      {/* Header + actions are interactive (print / calendar). */}
+      <BookingHeader client:load booking={booking} />
+
+      {/* Fanning receipt + welcome card. */}
+      <section id="stay" aria-label="Your booking">
+        <BookingCardStack client:visible booking={booking} />
+      </section>
+
+      {/* Arrival / WiFi / Breakfast. */}
+      <section aria-label="Stay details">
+        <InfoCardGrid client:visible cards={infoCards} />
+      </section>
+    </div>
+  </DashboardLayout>
+</BaseLayout>

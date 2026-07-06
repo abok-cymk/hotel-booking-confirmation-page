@@ -1,0 +1,37 @@
+---
+import { Sidebar } from "@/components/navigation/Sidebar";
+import { MobileNav } from "@/components/navigation/MobileNav";
+import { navItems } from "@/components/data/navigation";
+import { property, weather } from "@/components/data/booking";
+
+interface Props {
+  activeId?: string;
+}
+
+const { activeId = "stay" } = Astro.props;
+---
+
+<div class="flex min-h-dvh flex-col lg:flex-row">
+  {/* Desktop sidebar - static, ships zero JS. */}
+  <Sidebar
+    property={property}
+    navItems={navItems}
+    weather={weather}
+    activeId={activeId}
+  />
+
+  {/* Mobile top bar + drawer - hydrated island. */}
+  <MobileNav
+    client:load
+    property={property}
+    navItems={navItems}
+    weather={weather}
+    activeId={activeId}
+  />
+
+  <main id="main" class="flex-1 px-5 py-8 sm:px-8 lg:px-12 lg:py-10">
+    <div class="mx-auto w-full max-w-5xl">
+      <slot />
+    </div>
+  </main>
+</div>
