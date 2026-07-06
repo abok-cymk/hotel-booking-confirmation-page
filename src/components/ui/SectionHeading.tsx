@@ -17,11 +17,11 @@ export function SectionHeading({
   return (
     <div className={cx("space-y-2", className)}>
       {eyebrow ? (
-        <p className="font-mono text-xs uppercase tracking-[0.2em] --text-muted-foreground">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
           {eyebrow}
         </p>
       ) : null}
-      <Tag className="text-balance font-serif text-3xl leading-tight --text-foreground">
+      <Tag className="text-balance font-serif text-3xl leading-tight text-foreground">
         {title}
       </Tag>
     </div>

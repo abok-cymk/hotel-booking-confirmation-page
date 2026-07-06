@@ -1,4 +1,3 @@
-import { KeyRound, Wifi, UtensilsCrossed } from "lucide-react";
 import type { InfoCard } from "@/types";
 
 export const infoCards: InfoCard[] = [
@@ -6,7 +5,7 @@ export const infoCards: InfoCard[] = [
     id: "arrival",
     index: "01",
     tone: "primary",
-    icon: KeyRound,
+    icon: "key-round",
     eyebrow: "Arrival",
     title: "Check-in from 15:00",
     subtitle: "Sat, 25 April",
@@ -16,7 +15,7 @@ export const infoCards: InfoCard[] = [
     id: "wifi",
     index: "02",
     tone: "wifi",
-    icon: Wifi,
+    icon: "wifi",
     eyebrow: "WiFi",
     title: "Le Soleil . Guest",
     subtitle: "Password below",
@@ -29,7 +28,7 @@ export const infoCards: InfoCard[] = [
     id: "breakfast",
     index: "03",
     tone: "breakfast",
-    icon: UtensilsCrossed,
+    icon: "utensils-crossed",
     eyebrow: "Breakfast",
     title: "Served 8 - 10:30",
     subtitle: "On the terrace",

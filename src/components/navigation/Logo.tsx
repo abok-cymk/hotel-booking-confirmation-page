@@ -16,12 +16,12 @@ export function Logo({ primary, secondary, href = "#", className }: LogoProps) {
       className={cx("group flex items-center gap-3", className)}
       aria-label={`${primary} ${secondary} - home`}
     >
-      <SunMark className="size-8 --text-sun-deep transition-transform duration-500 group group-hover:rotate-45" />
+      <SunMark className="size-8 text-sun-deep transition-transform duration-500 group group-hover:rotate-45" />
       <span className="leading-tight">
-        <span className="block font-serif text-lg italic --text-primary">
+        <span className="block font-serif text-lg italic text-primary">
           {primary}
         </span>
-        <span className="block font-serif text-lg font-semibold --text-foreground">
+        <span className="block font-serif text-lg font-semibold text-foreground">
           {secondary}
         </span>
       </span>

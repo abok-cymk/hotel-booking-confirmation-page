@@ -10,15 +10,15 @@ export interface InfoCardProps {
 }
 
 const indexColor: Record<InfoCardTone, string> = {
-  primary: "--text-primary",
-  wifi: "--text-accent-wifi",
-  breakfast: "--text-accent-breakfast",
+  primary: "text-primary",
+  wifi: "text-accent-wifi",
+  breakfast: "text-accent-breakfast",
 };
 
 const eyebrowColor: Record<InfoCardTone, string> = {
-  primary: "--text-primary",
-  wifi: "--text-accent-wifi",
-  breakfast: "--text-accent-breakfast",
+  primary: "text-primary",
+  wifi: "text-accent-wifi",
+  breakfast: "text-accent-breakfast",
 };
 
 /**
@@ -34,7 +34,7 @@ export function InfoCard({ card, className }: InfoCardProps) {
     <Card
       as="article"
       className={cx(
-        "flex h-full flex-col gap-4 transition-shadow duration-300 --hover:shadow-(--shadow-float)",
+        "flex h-full flex-col gap-4 transition-shadow duration-300 hover:shadow-(--shadow-float)",
         className,
       )}
     >
@@ -59,11 +59,11 @@ export function InfoCard({ card, className }: InfoCardProps) {
       </header>
 
       <div className="space-y-1">
-        <h3 className="font-serif text-2xl leading-tight --text-foreground text-balance">
+        <h3 className="font-serif text-2xl leading-tight text-foreground text-balance">
           {title}
         </h3>
         {subtitle ? (
-          <p className="text-sm --text-muted-foreground">{subtitle}</p>
+          <p className="text-sm text-muted-foreground">{subtitle}</p>
         ) : null}
       </div>
 
@@ -79,7 +79,7 @@ export function InfoCard({ card, className }: InfoCardProps) {
           ))}
         </div>
       ) : body ? (
-        <p className="text-sm leading-relaxed --text-muted-foreground --text-pretty">
+        <p className="text-sm leading-relaxed text-muted-foreground text-pretty">
           {body}
         </p>
       ) : null}

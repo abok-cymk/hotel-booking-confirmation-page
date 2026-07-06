@@ -19,20 +19,20 @@ export function ReceiptCard({ booking, className }: ReceiptCardProps) {
     <article
       aria-label="Booking receipt"
       className={cx(
-        "flex flex-col gap-5 rounded-2xl border --border-border --bg-surface p-6 shadow-(--shadow-card)",
+        "flex flex-col gap-3 rounded-2xl border border-border bg-surface p-6 shadow-(--shadow-card)",
         className,
       )}
     >
       <header className="flex items-start justify-between">
         <div>
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] --text-muted-foreground">
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
             Receipt
           </p>
-          <h3 className="mt-1 font-serif text-xl --text-foreground">
+          <h3 className="mt-1 font-serif text-xl text-foreground">
             Your stay
           </h3>
         </div>
-        <p className="text-right font-mono text-[0.65rem] uppercase tracking-[0.15em] --text-muted-foreground">
+        <p className="text-right font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground">
           № MS-2026
           <br />
           {reference.replace("MS-2026-", "")}
@@ -75,7 +75,7 @@ export function ReceiptCard({ booking, className }: ReceiptCardProps) {
       />
 
       <div className="flex items-end justify-between gap-4">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] --text-muted-foreground">
+        <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">
           {paymentMethod}
         </p>
         <Barcode value={reference} />

@@ -34,12 +34,12 @@ export function CopyButton({
       onClick={handleCopy}
       aria-label={copied ? `Copied ${label}` : `Copied ${label}`}
       className={cx(
-        "inline-flex items-center gap-1 rounded-md border --border-border-strong --bg-surface px-2 py-1 font-mono text-[0.65rem] uppercase tracking-wider --text-nuted-foreground transition-colors --hover:bg-surface-muted",
+        "inline-flex items-center gap-1 rounded-md border border-border-strong bg-surface px-2 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-nuted-foreground transition-colors hover:bg-surface-muted",
         className,
       )}
     >
       {copied ? (
-        <Check className="size-3 --text-primary" />
+        <Check className="size-3 text-primary" />
       ) : (
         <Copy className="size-3" />
       )}

@@ -20,25 +20,25 @@ export function PriceRow({
   className,
 }: PriceRowProps) {
   return (
-    <div className={cx("flex items-baseline justify-between gap-4", className)}>
+    <div className={cx("flex items-center justify-between gap-4", className)}>
       <span
         className={cx(
           emphasis
-            ? "font-mono text-xs uppercase tracking-[0.18em] --text-muted-foreground"
-            : "text-sm --text-foreground",
+            ? "font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground"
+            : "text-sm text-foreground",
         )}
       >
         {label}
         {detail ? (
-          <span className="--text-muted-foreground"> {detail}</span>
+          <span className="text-muted-foreground"> {detail}</span>
         ) : null}
       </span>
       <span
         className={cx(
-          "font-numeric shrink-0",
+          "font-serif shrink-0 flex items-center",
           emphasis
-            ? "font-serif text-2xl --text-foreground"
-            : "text-sm --text-muted-foreground",
+            ? "font-serif text-2xl text-foreground"
+            : "text-sm text-muted-foreground",
         )}
       >
         {formatMoney({ amount, currency })}

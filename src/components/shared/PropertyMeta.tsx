@@ -14,7 +14,7 @@ export function PropertyMeta({ property, className }: PropertyMetaProps) {
   return (
     <div
       className={cx(
-        "space-y-1 font-mono text-[0.65rem] uppercase tracking-[0.15em] --text-faint-foreground",
+        "space-y-1 font-mono text-[0.65rem] uppercase tracking-[0.15em] text-faint-foreground",
         className,
       )}
     >

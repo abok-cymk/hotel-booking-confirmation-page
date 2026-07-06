@@ -1,17 +1,23 @@
-import type { LucideIcon } from "lucide-react";
+import { KeyRound, Wifi, UtensilsCrossed } from "lucide-react";
 import { cx } from "@/lib/utils";
-import type { InfoCardTone } from "@/types";
+import type { InfoCardIconName, InfoCardTone } from "@/types";
 
 export interface IconBoxProps {
-  icon: LucideIcon;
+  icon: InfoCardIconName;
   tone?: InfoCardTone;
   className?: string;
 }
 
+const infoIcons = {
+  "key-round": KeyRound,
+  wifi: Wifi,
+  "utensils-crossed": UtensilsCrossed,
+} as const;
+
 const toneStyles: Record<InfoCardTone, string> = {
-  primary: "--bg-primary --text-primary-foreground",
-  wifi: "--bg-accent-wifi --text-primary-foreground",
-  breakfast: "--bg-accent-breakfast --text-primary-foreground",
+  primary: "bg-primary text-primary-foreground",
+  wifi: "bg-accent-wifi text-primary-foreground",
+  breakfast: "bg-accent-breakfast text-primary-foreground",
 };
 
 /** Rounded square that holds a single icon - used on info cards. */
@@ -20,6 +26,8 @@ export function IconBox({
   tone = "primary",
   className,
 }: IconBoxProps) {
+  const ResolvedIcon = infoIcons[Icon];
+
   return (
     <span
       className={cx(
@@ -29,7 +37,7 @@ export function IconBox({
       )}
       aria-hidden="true"
     >
-      <Icon className="size-5" strokeWidth={2} />
+      <ResolvedIcon className="size-5" strokeWidth={2} />
     </span>
   );
 }
